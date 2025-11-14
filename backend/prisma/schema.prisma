@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Pasta {
+  id                String   @id @default(uuid())
+  numero            String   @unique
+  descricao         String
+  tipoDocumento     String
+  quantidadeDocumentos Int
+  observacoes       String?
+
+  // Controle de saída
+  dataSaida         DateTime
+  responsavelSaida  String
+
+  // Controle de recebimento
+  dataRecebimento   DateTime?
+  responsavelRecebimento String?
+
+  // Controle de retorno
+  dataRetorno       DateTime?
+  responsavelRetorno String?
+  observacoesRetorno String?
+
+  // Status: ENVIADO, RECEBIDO, RETORNADO
+  status            String   @default("ENVIADO")
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
