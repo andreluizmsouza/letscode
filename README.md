@@ -191,29 +191,61 @@ Deleta uma pasta
 
 ## Deploy em Produção
 
-### Deploy no Render (Recomendado - Gratuito)
+### 🚀 Qual plataforma escolher?
 
-Este projeto está configurado para deploy automático no Render.
+| Plataforma | Facilidade | Gratuito | Melhor Para |
+|------------|-----------|----------|-------------|
+| **Railway** ⭐ | ⭐⭐⭐⭐⭐ | $5/mês grátis | Iniciantes - Mais fácil! |
+| **Render** | ⭐⭐⭐ | ✅ Sim | Quem quer 100% gratuito |
+| **Vercel + Railway** | ⭐⭐⭐⭐ | Parcial | Performance máxima |
 
-**Método Rápido (Blueprint):**
+**Recomendação**: Use **Railway** se está começando - é muito mais simples!
+
+---
+
+### Opção 1: Railway (MAIS FÁCIL) ⭐
+
+Railway detecta tudo automaticamente e é super simples!
+
+**Método Rápido:**
+1. Acesse https://railway.app
+2. "New Project" → "Deploy from GitHub repo"
+3. Configure **Root Directory**: `backend`
+4. "Add PostgreSQL" no mesmo projeto
+5. Criar novo serviço → GitHub → Root Directory: `frontend`
+6. Pronto! ✨
+
+**Instruções Detalhadas:** [DEPLOY_RAILWAY.md](DEPLOY_RAILWAY.md)
+
+**Custo**: $5 gratuitos/mês, depois ~$5-10/mês
+
+---
+
+### Opção 2: Render (100% Gratuito)
+
+Render é totalmente gratuito mas requer configuração manual.
+
+**Método Blueprint:**
 1. Acesse https://dashboard.render.com
-2. Clique em "New +" → "Blueprint"
+2. "New +" → "Blueprint"
 3. Conecte seu repositório GitHub
-4. Clique em "Apply"
+4. "Apply"
 
-O Render criará automaticamente:
-- ✅ Backend (API Node.js)
-- ✅ Frontend (Site estático)
-- ✅ Banco de dados PostgreSQL
+**⚠️ Importante**: Você precisa configurar a variável `DATABASE_URL` manualmente.
 
-**Instruções Detalhadas:** Veja o arquivo [DEPLOY_RENDER.md](DEPLOY_RENDER.md)
+**Instruções Detalhadas:**
+- [DEPLOY_RENDER.md](DEPLOY_RENDER.md)
+- [RESOLVER_ERRO_DATABASE_URL.md](RESOLVER_ERRO_DATABASE_URL.md) - Se tiver erro
 
-### Outras Opções de Deploy
+**Custo**: 100% gratuito (com limitações)
 
-- **Railway**: https://railway.app
-- **Vercel** (frontend) + **Railway** (backend)
-- **Cyclic**: https://cyclic.sh
-- **Fly.io**: https://fly.io
+---
+
+### Outras Opções
+
+- **Vercel** (frontend) + **Railway** (backend) - Melhor performance
+- **Cyclic**: https://cyclic.sh - Simples mas limitado
+- **Fly.io**: https://fly.io - Para usuários avançados
 
 ## Desenvolvimento
 
