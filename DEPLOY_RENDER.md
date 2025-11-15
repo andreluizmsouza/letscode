@@ -2,6 +2,18 @@
 
 Este guia explica como fazer deploy da aplicação no Render (plataforma gratuita).
 
+## ⚠️ Problema Comum: "Environment variable not found: DATABASE_URL"
+
+Se você receber este erro, consulte o arquivo **[RESOLVER_ERRO_DATABASE_URL.md](RESOLVER_ERRO_DATABASE_URL.md)** com soluções detalhadas.
+
+**Resumo da solução**:
+1. Criar banco de dados PostgreSQL no Render
+2. Copiar a "Internal Database URL"
+3. Adicionar como variável `DATABASE_URL` no backend
+4. Fazer re-deploy
+
+---
+
 ## Pré-requisitos
 
 1. Conta no GitHub com o código commitado

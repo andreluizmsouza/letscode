@@ -6,7 +6,7 @@ yarn.lock
 # Database
 backend/*.db
 backend/*.db-journal
-backend/prisma/migrations/
+# Note: migrations folder should be committed for production deploys
 
 # Environment variables
 .env
