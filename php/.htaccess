@@ -1,0 +1,11 @@
+# Habilitar RewriteEngine
+RewriteEngine On
+
+# Redirecionar requisições da API
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^api/pastas(.*)$ api/pastas.php$1 [QSA,L]
+
+# Definir pasta public como raiz
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]
