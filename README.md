@@ -16,7 +16,7 @@ Sistema para controlar a saída de pastas com documentos (contratos) para digita
 - Node.js
 - Express
 - Prisma ORM
-- SQLite
+- PostgreSQL (produção) / SQLite (desenvolvimento)
 
 ### Frontend
 - React
@@ -189,6 +189,32 @@ Body:
 ### DELETE /api/pastas/:id
 Deleta uma pasta
 
+## Deploy em Produção
+
+### Deploy no Render (Recomendado - Gratuito)
+
+Este projeto está configurado para deploy automático no Render.
+
+**Método Rápido (Blueprint):**
+1. Acesse https://dashboard.render.com
+2. Clique em "New +" → "Blueprint"
+3. Conecte seu repositório GitHub
+4. Clique em "Apply"
+
+O Render criará automaticamente:
+- ✅ Backend (API Node.js)
+- ✅ Frontend (Site estático)
+- ✅ Banco de dados PostgreSQL
+
+**Instruções Detalhadas:** Veja o arquivo [DEPLOY_RENDER.md](DEPLOY_RENDER.md)
+
+### Outras Opções de Deploy
+
+- **Railway**: https://railway.app
+- **Vercel** (frontend) + **Railway** (backend)
+- **Cyclic**: https://cyclic.sh
+- **Fly.io**: https://fly.io
+
 ## Desenvolvimento
 
 ### Scripts Disponíveis
@@ -196,6 +222,7 @@ Deleta uma pasta
 Backend:
 - `npm start`: Inicia o servidor
 - `npm run dev`: Inicia o servidor em modo desenvolvimento
+- `npm run build`: Build para produção (gera Prisma Client e migrations)
 - `npx prisma studio`: Abre interface visual do banco de dados
 
 Frontend:
